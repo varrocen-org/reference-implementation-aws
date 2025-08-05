@@ -1,5 +1,6 @@
 provider "aws" {
-  region = var.region
+  region  = var.region
+  profile = "wescale-sbx"
 }
 
 data "aws_eks_cluster_auth" "this" {

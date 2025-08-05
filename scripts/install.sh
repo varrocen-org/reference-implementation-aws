@@ -7,6 +7,9 @@ source ${REPO_ROOT}/scripts/utils.sh
 
 echo -e "\n${BOLD}${BLUE}🚀 Starting installation process...${NC}"
 
+# Kubeconfig
+KUBECONFIG_FILE=/Users/varrocen/.kube/config
+
 # Static helm values files
 ARGOCD_STATIC_VALUES_FILE=${REPO_ROOT}/packages/argo-cd/values.yaml
 EXTERNAL_SECRETS_STATIC_VALUES_FILE=${REPO_ROOT}/packages/external-secrets/values.yaml

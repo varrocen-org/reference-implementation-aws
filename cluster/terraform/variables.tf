@@ -7,12 +7,12 @@ variable "cluster_name" {
 variable "region" {
   description = "AWS region"
   type        = string
-  default     = "us-west-2"
+  default     = "eu-west-3"
 }
 
 variable "auto_mode" {
   description = "Enable EKS Auto Mode. When enabled, EKS automatically manages compute resources and many addons."
   type        = bool
-  default     = false
+  default     = true
 }
 

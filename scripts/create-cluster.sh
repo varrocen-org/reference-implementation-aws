@@ -83,6 +83,6 @@ echo -e "${CYAN}🔶 Type:${NC} ${CLUSTER_TYPE}"
 echo -e "${CYAN}🔶 Tool:${NC} ${DEPLOYMENT_TOOL}"
 
 echo -e "\n${BOLD}${BLUE}🔧 Updating kubeconfig...${NC}"
-aws eks update-kubeconfig --region ${AWS_REGION} --name ${CLUSTER_NAME} --alias ${CLUSTER_NAME} --profile wescale-sbx
+aws eks update-kubeconfig --region ${AWS_REGION} --name ${CLUSTER_NAME} --alias ${CLUSTER_NAME}
 
 echo -e "\n${BOLD}${GREEN}✅ Cluster is ready for CNOE reference implementation installation!${NC}"

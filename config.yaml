@@ -25,7 +25,7 @@ route53_hosted_zone_id: "Z02236932BUDA6CCO11VE"
 # When enabled, the exposed addons will be accessible at https://<domain_name>/<addon-name> 
 # When disabled, the exposed addons will be accessible at https://<addon-name>.<domain_name>
 # !!! Note: This is a string value as it is passed on to the Argo CD cluster secret as label
-path_routing: "false"
+path_routing: "true"
 
 # Tags for AWS resources
 tags:

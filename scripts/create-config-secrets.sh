@@ -25,7 +25,6 @@ create_update_secret() {
       --secret-string file://"$TEMP_SECRET_FILE" \
       --description "Secret created for $1 of CNOE AWS Reference Implementation" \
       --tags $TAGS \
-      --profile $AWS_PROFILE \
       --region $AWS_REGION >/dev/null 2>&1; then
       echo -e "${GREEN}✅ Secret '${BOLD}$SECRET_NAME_PREFIX/$1${NC}${GREEN}' created successfully!${NC}"
     else
@@ -33,7 +32,6 @@ create_update_secret() {
       if aws secretsmanager update-secret \
          --secret-id "$SECRET_NAME_PREFIX/$1" \
          --secret-string file://"$TEMP_SECRET_FILE" \
-         --profile $AWS_PROFILE \
          --region $AWS_REGION >/dev/null 2>&1; then
          echo -e "${GREEN}✅ Secret '${BOLD}$SECRET_NAME_PREFIX/$1${NC}${GREEN}' updated successfully!${NC}"
       else
@@ -45,7 +43,7 @@ create_update_secret() {
 
    # Cleanup
    rm "$TEMP_SECRET_FILE"
-   echo -e "${CYAN}🔐 Secret ARN:${NC} $(aws secretsmanager describe-secret --secret-id "$SECRET_NAME_PREFIX/$1" --profile $AWS_PROFILE --region $AWS_REGION --query 'ARN' --output text)"
+   echo -e "${CYAN}🔐 Secret ARN:${NC} $(aws secretsmanager describe-secret --secret-id "$SECRET_NAME_PREFIX/$1" --region $AWS_REGION --query 'ARN' --output text)"
 }
 
 echo -e "\n${YELLOW}📋 Processing files...${NC}"

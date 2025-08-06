@@ -20,7 +20,7 @@ get_tags_from_config() {
 get_kubeconfig() {
   export KUBECONFIG_FILE=$(mktemp)
   echo -e "${PURPLE}🔑 Generating temporary kubeconfig for cluster ${BOLD}${CLUSTER_NAME}${NC}...${NC}"
-  aws eks update-kubeconfig --profile $AWS_PROFILE --region $AWS_REGION --name $CLUSTER_NAME --kubeconfig $KUBECONFIG_FILE > /dev/null 2>&1
+  aws eks update-kubeconfig --region $AWS_REGION --name $CLUSTER_NAME --kubeconfig $KUBECONFIG_FILE > /dev/null 2>&1
 }
 
 # Wait for all Argo CD applications to report healthy status

@@ -16,7 +16,7 @@ auto_mode: "true"
 region: "eu-west-3"
 
 # Base Domain name used for exposing services. It should be a subdomain or main domain of the Route53 hosted zone.
-domain: "sdx-vincent-arrocena.aws.wescale.fr"
+domain: "cnoe-ref-impl.sdx-vincent-arrocena.aws.wescale.fr"
 
 # Route53 hosted zone ID for configuring external-dns
 route53_hosted_zone_id: "Z02236932BUDA6CCO11VE"

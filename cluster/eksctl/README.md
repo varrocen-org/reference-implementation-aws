@@ -61,7 +61,7 @@ To delete the cluster and all associated resources:
 ```bash
 # Delete the EKS cluster
 export $CLUSTER_NAME="cnoe-ref-impl"
-export AWS_REGION="eu-west-3"
+export AWS_REGION="us-west-2"
 eksctl delete cluster --name $CLUSTER_NAME --region $AWS_REGION
 
 # Delete the permissions boundary policy
